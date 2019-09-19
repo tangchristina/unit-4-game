@@ -37,25 +37,37 @@ $(document).ready(function() {
         $("#win-count").text(winCount);
         yourScore = 0;
         $("#your-score").text(yourScore);
+        $("#target-score").text(targetScore);
         }
 
-    
-
-        //Jquery click events
-
-        $("#gem-one").on("click", function() {
-            yourScore = gemOne + yourScore;
-            $("#your-score").text(yourScore);
-
-            if (yourScore===targetScore) {
+        if (yourScore===targetScore) {
                 winCount++;
             alert("Nice work, you won!");
             reset();
-            } else if (yourScore>targetScore) {
+            } else if (yourScore > targetScore) {
             lossCount++;
             alert("Sorry you lost!");
             reset();
             }
+
+        //Jquery click events
+        
+        $("#gem-one").on("click", function() {
+            yourScore = gemOne + yourScore;
+            $("#your-score").text(yourScore);
+
+            if (yourScore==targetScore) {
+                winCount++;
+            alert("Nice work, you won!");
+            reset();
+            } 
+            
+            if (yourScore > targetScore) {
+            lossCount++;
+            alert("Sorry you lost!");
+            reset();
+            }
+            
             
         })
 
@@ -63,11 +75,12 @@ $(document).ready(function() {
             yourScore = gemTwo + yourScore;
             $("#your-score").text(yourScore);
             
-            if (yourScore===targetScore) {
+            if (yourScore==targetScore) {
                 winCount++;
             alert("Nice work, you won!");
             reset();
-            } else if (yourScore>targetScore) {
+            }
+            if (yourScore > targetScore) {
             lossCount++;
             alert("Sorry you lost!");
             reset();
@@ -79,11 +92,12 @@ $(document).ready(function() {
             yourScore = gemThree + yourScore;
             $("#your-score").text(yourScore);
             
-            if (yourScore===targetScore) {
+            if (yourScore==targetScore) {
                 winCount++;
             alert("Nice work, you won!");
             reset();
-            } else if (yourScore>targetScore) {
+            } 
+            if (yourScore > targetScore) {
                 lossCount++;
                 alert("Sorry you lost!");
                 reset();
@@ -95,11 +109,12 @@ $(document).ready(function() {
             yourScore = gemFour + yourScore;
             $("#your-score").text(yourScore);
             
-            if (yourScore===targetScore) {
+            if (yourScore==targetScore) {
                 winCount++;
             alert("Nice work, you won!");
             reset();
-            } else if (yourScore>targetScore) {
+            }
+            if (yourScore>targetScore) {
                 lossCount++;
             alert("Sorry you lost!");
             reset();
@@ -109,6 +124,9 @@ $(document).ready(function() {
 
         console.log(gemOne);
         console.log(gemTwo);
+        console.log(gemThree);
+        console.log(gemFour);
+        console.log(yourScore);
 
         
     

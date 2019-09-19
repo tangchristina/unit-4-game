@@ -15,17 +15,15 @@ $(document).ready(function() {
         var yourScore = 0;
         var winCount = 0;
         var lossCount = 0;
-        var score = 0;
+    
 
         //Getting a handle on our html
         $("#your-score").text(yourScore);
         $("#target-score").text(targetScore);
         $("#loss-count").text(lossCount);
         $("#win-count").text(winCount);
-        $("gem-one").text(gemOne);
-        $("gem-two").text(gemTwo);
-        $("gem-three").text(gemThree);
-        $("gem-four").text(gemFour);
+        
+       
 
         //Reset function, setting your score back to zero after winning or losing.
         function reset () {
@@ -34,42 +32,83 @@ $(document).ready(function() {
         gemTwo = Math.floor(Math.random()*12)+1;
         gemThree = Math.floor(Math.random()*12)+1;
         gemFour = Math.floor(Math.random()*12)+1;
-        score = 0;
-        }
-
-        //If then statements
-        if (yourScore > targetScore) {
-            lossCount++;
-            alert("Sorry you lost!");
-            reset();
-           
+        
+        $("#loss-count").text(lossCount);
+        $("#win-count").text(winCount);
+        yourScore = 0;
+        $("#your-score").text(yourScore);
         }
 
     
 
-        if (yourScore===targetScore) {
-            winCount++;
-            alert("Nice work, you won!");
-            reset();
-        }
-
         //Jquery click events
 
-        $("#gem-one").on("click"); {
-            yourScore = gemOne + score;
-        }
+        $("#gem-one").on("click", function() {
+            yourScore = gemOne + yourScore;
+            $("#your-score").text(yourScore);
 
-        $("#gem-two").on("click"); {
-            yourScore = gemTwo + score;
-        }
+            if (yourScore===targetScore) {
+                winCount++;
+            alert("Nice work, you won!");
+            reset();
+            } else if (yourScore>targetScore) {
+            lossCount++;
+            alert("Sorry you lost!");
+            reset();
+            }
+            
+        })
 
-        $("#gem-three").on("click"); {
-            yourScore = gemThree + score;
-        }
+        $("#gem-two").on("click", function() {
+            yourScore = gemTwo + yourScore;
+            $("#your-score").text(yourScore);
+            
+            if (yourScore===targetScore) {
+                winCount++;
+            alert("Nice work, you won!");
+            reset();
+            } else if (yourScore>targetScore) {
+            lossCount++;
+            alert("Sorry you lost!");
+            reset();
+            }
+            
+        })
 
-        $("#gem-four").on("click"); {
-            yourScore = gemFour + score;
-        }
+        $("#gem-three").on("click", function () {
+            yourScore = gemThree + yourScore;
+            $("#your-score").text(yourScore);
+            
+            if (yourScore===targetScore) {
+                winCount++;
+            alert("Nice work, you won!");
+            reset();
+            } else if (yourScore>targetScore) {
+                lossCount++;
+                alert("Sorry you lost!");
+                reset();
+            }
+            
+        })
+
+        $("#gem-four").on("click", function() {
+            yourScore = gemFour + yourScore;
+            $("#your-score").text(yourScore);
+            
+            if (yourScore===targetScore) {
+                winCount++;
+            alert("Nice work, you won!");
+            reset();
+            } else if (yourScore>targetScore) {
+                lossCount++;
+            alert("Sorry you lost!");
+            reset();
+            }
+            
+        })
+
+        console.log(gemOne);
+        console.log(gemTwo);
 
         
     

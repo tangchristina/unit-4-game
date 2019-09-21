@@ -41,14 +41,14 @@ $(document).ready(function() {
         }
 
         if (yourScore===targetScore) {
-                winCount++;
-            alert("Nice work, you won!");
-            reset();
-            } else if (yourScore > targetScore) {
-            lossCount++;
-            alert("Sorry you lost!");
-            reset();
-            }
+            winCount++;
+        alert("Nice work, you won!");
+        reset();
+        } else if (yourScore > targetScore) {
+        lossCount++;
+        alert("Sorry you lost!");
+        reset();
+        }   
 
         //Jquery click events
         
@@ -56,17 +56,19 @@ $(document).ready(function() {
             yourScore = gemOne + yourScore;
             $("#your-score").text(yourScore);
 
+            if (yourScore > targetScore) {
+                lossCount++;
+                alert("Sorry you lost!");
+                reset();
+                }
+
             if (yourScore==targetScore) {
                 winCount++;
             alert("Nice work, you won!");
             reset();
             } 
             
-            if (yourScore > targetScore) {
-            lossCount++;
-            alert("Sorry you lost!");
-            reset();
-            }
+            
             
             
         })
@@ -119,7 +121,7 @@ $(document).ready(function() {
             alert("Sorry you lost!");
             reset();
             }
-            
+      
         })
 
         console.log(gemOne);
@@ -127,6 +129,7 @@ $(document).ready(function() {
         console.log(gemThree);
         console.log(gemFour);
         console.log(yourScore);
+        
 
         
     

@@ -1,4 +1,8 @@
 # unit-4-game
+
+DEPLOYMENT
+https://tangchristina.github.io/unit-4-game/
+
 INSTRUCTIONS
 1. A target score is generated at the start of each game.
 2. Each of the four crystals below have a hidden random value.
